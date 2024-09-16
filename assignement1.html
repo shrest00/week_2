@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+
+    <script>
+        //prompt the first number
+        let number1 = prompt("Enter the first number:");
+        number1 = parseFloat(number1);
+
+        //check if input is valid or not
+
+        if (isNaN(number1)) {
+            alert("Invalid Input. Please enter a valid number: ");
+ 
+        }
+
+        //operation prompt
+        else{
+            let operator = prompt("Enter the operator(+, -, *, /):");
+
+            //check the operator is valid
+            if (operator !== "+" && operator !== "-" && operator !== "*" && operator !== "/") {
+                alert("Invalid operator. Please enter one of +, -, *, /.");
+            } 
+            else {
+                //Prompt the second number
+                let number2 = prompt('Enter the second number:');
+                number2 = parseFloat(number2);
+                if (isNaN(number2)) {
+                    alert("Invalid input. Please enter a valid number.");
+                        
+                } 
+                else{
+                    let result;
+                    switch(operator) {
+                        case "+":
+                            result = number1 + number2;
+                            break;
+                        case "-":
+                            result = number1 - number2;
+                            break;
+                        case "*":
+                            result = number1 * number2;
+                            break;
+
+                        case "/": 
+                            result = number1 / number2;
+                            break;   
+                        default: 
+                            result = "Invalid operator.";
+                        break;
+
+                        
+                    }
+                    
+                    document.write("The result of " + number1 + " " + operator + " " + number2 + " is: " + result);
+                }
+
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
